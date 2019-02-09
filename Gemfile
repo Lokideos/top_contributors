@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Github API calls wrapper
 gem "octokit", "~> 4.0"
 
+# Install slim for Rails
+gem 'slim-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
