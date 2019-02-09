@@ -43,5 +43,23 @@ RSpec.describe ContributorsSearchesController, type: :controller do
       end
     end
   end
+
+  describe 'GET #show' do
+    let(:contributors_search) { create(:contributors_search) }
+
+    before { get :show, params: { id: contributors_search } }
+
+    it 'renders :show template' do
+      expect(response).to render_template :show
+    end
+
+    it 'returns 200 OK status' do
+      expect(response).to have_http_status :ok
+    end
+
+    it 'assigns contributors array to @contributors' do
+      expect(assigns(:contributors).size).to eq 3
+    end
+  end
 end
 # rubocop:enable Metrics/BlockLength

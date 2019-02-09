@@ -1,2 +1,11 @@
-h1 ContributorsSearches#new
-p Find me in app/views/contributors_searches/new.html.slim
+h1 Top Github Contributors
+
+section.contributors-search
+  h2.visually-hidden Search for top github contributors for the given repository
+
+  = form_with model: contributors_search, local: true do |f|
+    p
+      = f.label :url, 'Repository'
+      = f.text_field :url
+
+    p= f.submit 'Search'

@@ -8,15 +8,15 @@ feature 'User can retrieve top contributors from github repository', "
   I'd like to be able to retrieve top contributors from given github repository
 " do
   scenario 'User retrieves top contributors from github repository' do
-    visit new_contributors_searches_path
+    visit new_contributors_search_path
 
     within '.contributors-search' do
-      fill_in 'Search', with: 'https://github.com/rails/rails'
+      fill_in 'Repository', with: 'https://github.com/rails/rails'
       click_on 'Search'
     end
 
     expect(page).to have_content 'dhh'
-    expect(page).to have_content 'refael'
+    expect(page).to have_content 'rafaelfranca'
     expect(page).to have_content 'tenderlove'
   end
 

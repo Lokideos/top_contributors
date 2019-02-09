@@ -13,7 +13,9 @@ class ContributorsSearchesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @contributors = Services::GithubTopContributors.new(contributors_search.url).call
+  end
 
   private
 
@@ -24,4 +26,6 @@ class ContributorsSearchesController < ApplicationController
   def contributors_search
     @contributors_search ||= params[:id] ? ContributorsSearch.find(params[:id]) : ContributorsSearch.new
   end
+
+  helper_method :contributors_search
 end
