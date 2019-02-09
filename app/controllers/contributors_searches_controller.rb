@@ -9,6 +9,7 @@ class ContributorsSearchesController < ApplicationController
     if contributors_search.save
       redirect_to contributors_search
     else
+      flash[:alert] = 'You have provided bad url.'
       render :new
     end
   end

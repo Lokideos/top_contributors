@@ -20,5 +20,15 @@ feature 'User can retrieve top contributors from github repository', "
     expect(page).to have_content 'tenderlove'
   end
 
-  scenario 'User tries to retrieve top contributors with using bad repository url'
+  scenario 'User tries to retrieve top contributors with using bad repository url' do
+    visit new_contributors_search_path
+
+    within '.contributors-search' do
+      fill_in 'Repository', with: 'Za Warudo'
+      click_on 'Search'
+    end
+
+    expect(page).to_not have_content 'dhh'
+    expect(page).to have_content 'You have provided bad url.'
+  end
 end
