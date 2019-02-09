@@ -16,7 +16,7 @@ RSpec.describe ContributorsSearchesController, type: :controller do
     end
   end
 
-  describe 'GET #create' do
+  describe 'POST #create' do
     context 'with valid attributes' do
       it 'saves search result in the database' do
         expect do
