@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    title TopContributors
+    meta name='keywords' content='github contributors'
+    meta name='description' content='Search for top github contributors on our awesome website!'
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    p.notice
+      = notice
+    p.alert
+      = alert
+
+    = yield
