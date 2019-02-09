@@ -30,5 +30,6 @@ feature 'User can retrieve top contributors from github repository', "
 
     expect(page).to_not have_content 'dhh'
     expect(page).to have_content 'You have provided bad url.'
+    expect(page).to have_content 'Url is not correct url to github repository.'
   end
 end

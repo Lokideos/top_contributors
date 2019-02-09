@@ -3,6 +3,7 @@ h1 Top Github Contributors
 section.contributors-search
   h2.visually-hidden Search for top github contributors for the given repository
 
+  = render 'shared/errors', resource: contributors_search
   = form_with model: contributors_search, local: true do |f|
     p
       = f.label :url, 'Repository'
