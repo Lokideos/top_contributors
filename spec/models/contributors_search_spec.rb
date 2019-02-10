@@ -20,4 +20,12 @@ RSpec.describe ContributorsSearch, type: :model do
     expect(contributors_search).to receive(:create_contributors)
     contributors_search.save
   end
+
+  describe '#generate_zip' do
+    let(:contribution_search) { create(:contributors_search) }
+
+    it 'returns StringIO object' do
+      expect(contribution_search.generate_zip).to be_a(StringIO)
+    end
+  end
 end
