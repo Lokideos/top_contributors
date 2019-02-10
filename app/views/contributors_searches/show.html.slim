@@ -1,5 +1,7 @@
 h1= "Top contributors for #{contributors_search.url} repository"
 
 ul
-  - @contributors.each do |contr|
-    li= contr.login
+  - contributors_search.contributors.each do |contributor|
+    li
+      = contributor.name
+      = link_to 'Download Diploma', diploma_path(contributor.diploma)

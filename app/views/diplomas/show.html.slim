@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    = wicked_pdf_stylesheet_link_tag "pdf"
+    = wicked_pdf_javascript_include_tag "number_pages"
+
+  body onload='number pages'
+    h1 Thank you for your contribution!
+    p #{diploma.contributor_name}, thank you for staying with us!
