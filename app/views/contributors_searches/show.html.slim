@@ -5,3 +5,5 @@ ul
     li
       = contributor.name
       = link_to 'Download Diploma', diploma_path(contributor.diploma)
+
+p= link_to 'Download Diploma archive', contributors_search_path(contributors_search, format: :zip)

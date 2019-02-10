@@ -16,5 +16,6 @@ feature 'User can download diplomas for contribution', "
     end
 
     expect(page).to have_content 'Download Diploma'
+    expect(page).to have_content 'Download Diploma archive'
   end
 end

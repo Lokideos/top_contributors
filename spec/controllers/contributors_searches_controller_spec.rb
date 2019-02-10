@@ -47,14 +47,28 @@ RSpec.describe ContributorsSearchesController, type: :controller do
   describe 'GET #show' do
     let(:contributors_search) { create(:contributors_search) }
 
-    before { get :show, params: { id: contributors_search } }
+    context 'general show test' do
+      before { get :show, params: { id: contributors_search } }
 
-    it 'renders :show template' do
-      expect(response).to render_template :show
+      it 'renders :show template' do
+        expect(response).to render_template :show
+      end
+
+      it 'returns 200 OK status' do
+        expect(response).to have_http_status :ok
+      end
     end
 
-    it 'returns 200 OK status' do
-      expect(response).to have_http_status :ok
+    it 'renders html for html request' do
+      get :show, params: { id: contributors_search, format: :html }
+
+      expect(response.header['Content-Type']).to include 'text/html'
+    end
+
+    it 'returns zip for zip request' do
+      get :show, params: { id: contributors_search, format: :zip }
+
+      expect(response.header['Content-Type']).to include 'zip'
     end
   end
 end

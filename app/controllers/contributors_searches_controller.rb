@@ -14,7 +14,14 @@ class ContributorsSearchesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.html
+      format.zip do
+        send_data contributors_search.generate_zip.read, filename: 'diplomas.zip'
+      end
+    end
+  end
 
   private
 
