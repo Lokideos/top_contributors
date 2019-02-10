@@ -56,10 +56,6 @@ RSpec.describe ContributorsSearchesController, type: :controller do
     it 'returns 200 OK status' do
       expect(response).to have_http_status :ok
     end
-
-    it 'assigns contributors array to @contributors' do
-      expect(assigns(:contributors).size).to eq 3
-    end
   end
 end
 # rubocop:enable Metrics/BlockLength

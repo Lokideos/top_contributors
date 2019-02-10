@@ -14,9 +14,7 @@ class ContributorsSearchesController < ApplicationController
     end
   end
 
-  def show
-    @contributors = Services::GithubTopContributors.new(contributors_search.url).call
-  end
+  def show; end
 
   private
 
