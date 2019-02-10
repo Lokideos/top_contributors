@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_09_140852) do
+ActiveRecord::Schema.define(version: 2019_02_10_094245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contributors", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "contributors_search_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contributors_search_id"], name: "index_contributors_on_contributors_search_id"
+  end
 
   create_table "contributors_searches", force: :cascade do |t|
     t.string "url", null: false
@@ -21,4 +29,14 @@ ActiveRecord::Schema.define(version: 2019_02_09_140852) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "diplomas", force: :cascade do |t|
+    t.string "contributor_name", null: false
+    t.bigint "contributor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contributor_id"], name: "index_diplomas_on_contributor_id"
+  end
+
+  add_foreign_key "contributors", "contributors_searches"
+  add_foreign_key "diplomas", "contributors"
 end
