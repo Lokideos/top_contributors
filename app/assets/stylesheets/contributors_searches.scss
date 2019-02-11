@@ -1,3 +1,127 @@
 // Place all the styles related to the ContributorsSearches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  -webkit-clip-path: inset(100%);
+
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #464646;
+  
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {  
+  margin: 0 auto;
+  margin-top: 20px;  
+  width: 1020px;
+}
+
+.button {
+  margin: 0 auto;
+  padding: 8px;
+
+  font-size: 16px;
+  color: #0f4c7f;
+
+  background-color: #ffffff;
+  border: 2px solid #0f4c7f;
+  border-radius: 15%;
+}
+
+.button:hover,
+.button:focus {
+  outline: none;
+  background-color: #6abbff;
+}
+
+.button:active {
+  background-color: #1d98ff;
+}
+
+.headline {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.contributors-search form {
+  display: flex;  
+}
+
+.contributors-search label {
+  margin-right: 10px;
+}
+
+.contributors-search p {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.contributors-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.contributors-list li {
+  display: flex;
+  justify-content: space-between;
+
+  width: 300px;
+}
+
+.download-link {
+  color: #7F0200;
+}
+
+.download-link:focus,
+.download-link:hover {
+  color: #FF4F4C;
+}
+
+.download-link:active {
+  color: #CC0300; 
+}
+
+.navigation-link {
+  color: #7F3604;
+}
+
+.navigation-link:focus,
+.navigation-link:hover {
+  color: #FF9954;
+}
+
+.navigation-link:active {
+  color: #CC5706;
+}

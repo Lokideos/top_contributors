@@ -1,9 +1,11 @@
-h1= "Top contributors for #{contributors_search.url} repository"
+h1.headline= "Top contributors for #{contributors_search.url} repository"
 
-ul
+ul.contributors-list
   - contributors_search.contributors.each do |contributor|
     li
       = contributor.name
-      = link_to 'Download Diploma', diploma_path(contributor.diploma)
+      = link_to 'Download Diploma', diploma_path(contributor.diploma), class: 'download-link'
 
-p= link_to 'Download Diploma archive', contributors_search_path(contributors_search, format: :zip)
+p= link_to 'Download Diploma archive', contributors_search_path(contributors_search, format: :zip), class: 'download-link'
+
+p= link_to 'Back to Main Page', new_contributors_search_path, class: 'navigation-link'
