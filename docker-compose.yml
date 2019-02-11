@@ -1,0 +1,12 @@
+version: '3'
+services:
+  postgresql-server:
+    image: 'postgres:10.6-alpine'
+  top-contributors-app:
+    build: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgresql-server
+    environment:
+      DATABASE_URL: postgres://postgres@postgresql-server

@@ -1,0 +1,7 @@
+= render 'shared/errors', resource: contributors_search
+= form_with model: contributors_search, local: true do |f|
+  p
+    = f.label :url, 'Repository', class: 'form-label'
+    = f.text_field :url
+
+  p= f.submit 'Search', class: 'button'
